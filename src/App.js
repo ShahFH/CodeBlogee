@@ -1,31 +1,23 @@
 import React from 'react';
-import './style.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Home from './components/Home';
+import Articles from './components/Articles';
+import About from './components/About';
+import Footer from './components/Footer';
 
-import { useState } from 'react';
-
-const App = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
-  const handleNavToggle = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
+function App() {
   return (
-    <div className="App">
-      <nav className={isNavOpen ? 'navbar open' : 'navbar'}>
-        <div className="nav-brand">C⭕Bloge</div>
-        <button className="nav-toggle" onClick={handleNavToggle}>
-          Menu
-        </button>
-        <ul className="nav-menu">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About</li>
-          <li className="nav-item">Services</li>
-          <li className="nav-item">Contact</li>
-        </ul>
-      </nav>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/articles" component={Articles} />
+        <Route path="/about" component={About} />
+      </Switch>
+      <Footer />
+    </Router>
   );
-};
+}
 
 export default App;
