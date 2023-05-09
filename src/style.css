@@ -107,13 +107,18 @@ body {
 
 .Home {
   background-color: #1d2939;
-  background-image: url('../bgImg.png');
-  background-repeat: no-repeat;
-  background-size: 1440px auto;
+  min-height: calc(100vh - 60px); /* Adjust the navbar height */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+}
+
+.bgImg {
+  position: absolute;
+  width: 100%; /* Adjust the width to your desired size */
+  height: auto; /* Keep the aspect ratio by setting height to auto */
+  left: 0;
+  z-index: -1; /* Move the image behind the content */
 }
 
 .hero {
@@ -121,34 +126,89 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  z-index: 1; /* Ensure the content is in front of the image */
 }
 
 .hero-title {
-  position: absolute;
-  left: 25.62%;
-  right: 25.62%;
-  top: 7.8%;
-  bottom: 89.6%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 108px;
-  line-height: 128px;
-  /* or 119% */
-
-  letter-spacing: -0.022em;
-
-  color: #FFFFFF;
+  font-size: 80px;
+  line-height: 1.6; /* Adjust the line-height for vertical centering */
+  color: #ffffff;
 }
 
 .hero-text {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  width: 80%; /* Adjust the width to your desired size */
+  max-width: 592px; /* Set a maximum width for responsiveness */
+  margin: 20px 0; /* Add some vertical spacing */
+  color: #ffffff;
 }
 
-.hero-image {
-  width: 854px;
-  max-width: 100%;
-  margin-bottom: 2rem;
+/**********************/
+/** Articles css */
+
+/* CSS for Articles component */
+
+section {
+  min-height: calc(100vh - 60px); /* Adjust the navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.post a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #333333;
 }
