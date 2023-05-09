@@ -1,5 +1,7 @@
-import React from 'react';
-import '../style.css'
+import React, { useState } from 'react';
+import '../style.css';
+
+
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
   
@@ -10,7 +12,7 @@ const Navbar = () => {
     return (
       <div className="App">
         <nav className={isNavOpen ? 'navbar open' : 'navbar'}>
-          <div className="nav-brand">C⭕Bloge</div>
+          <div className="nav-brand">C<span className="jump">⭕</span>Bloge</div>
           <button className="nav-toggle" onClick={handleNavToggle}>
             Menu
           </button>
