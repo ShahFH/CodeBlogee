@@ -11,8 +11,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/articles" element={<Articles />} />
+        <Route path="./components/articles.js" element={<Articles />} />
       </Routes>
+      <Articles/>
       <Footer />
     </Router>
   );
