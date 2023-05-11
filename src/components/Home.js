@@ -6,12 +6,13 @@ import Image from '../Image.jpg';
 function Home() {
   return (
     <section className='Home'>
-      <div className='hero'>
-      <img className="bgImg" src={bgImg} alt="Background-Img" />
-        <h1 className='hero-title'>CodeBloge</h1>
+      <div className='hero container'>
+      {<img className="bgImg" src={bgImg} alt="Background-Img" />}
+        <h1 className='hero-title'>Welcome to CodeBloge</h1>
         <p className='hero-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <img className='hero-image' src={Image} alt='Hero Image' />
+        
       </div>
+      <img className='hero-image' src={Image} alt='Hero Image' />
     </section>
   );
 }

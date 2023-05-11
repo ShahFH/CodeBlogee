@@ -10,7 +10,12 @@ body {
 
 .App {
   text-align: center;
-  width: ;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 107rem;
+  padding: 0 4rem;
 }
 
 .navbar {
@@ -29,14 +34,6 @@ body {
   font-weight: bold;
   font-family: 'Nunito', sans-serif;
 }
-.jump {
-  transition: transform 0.2s ease-in-out;
-}
-
-.jump:hover {
-  transform: translateY(-5px);
-}
-
 .nav-toggle {
   display: none;
 }
@@ -103,15 +100,14 @@ body {
   }
 }
 
-
 /**Home Page css */
 
 .Home {
   background-color: #1d2939;
-  min-height: calc(100vh - 60px); /* Adjust the navbar height */
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-bottom: 20rem;;
 }
 
 .bgImg {
@@ -131,25 +127,43 @@ body {
 }
 
 .hero-title {
+  position: relative;
+  top: 16vh;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
-  line-height: 1.6; /* Adjust the line-height for vertical centering */
+  line-height: 1.2; /* Adjust the line-height for vertical centering */
+  margin: 0; /* Remove any default margin */
   color: #ffffff;
 }
 
 .hero-text {
+  position: relative;
+  top: 19vh;
   width: 80%; /* Adjust the width to your desired size */
   max-width: 592px; /* Set a maximum width for responsiveness */
-  margin: 20px 0; /* Add some vertical spacing */
+  margin: 20px auto; /* Add vertical spacing and horizontally center the text */
   color: #ffffff;
 }
 
-/**********************/
-/** Articles css */
-
-/* CSS for Articles component */
-
-section {
+.hero-image{
+  position: absolute;
+  top: 60vh;
 }
+
+/**********************/
+/* CSS for Articles component */
+.postContainer{
+  display: flex;
+  justify-content: center;
+  column-gap: 26px;
+  min-width: 698px;
+}
+
+h2{
+  font-size: 22px;
+}
+
+/**********************/
+/* Footer css*/
