@@ -155,7 +155,8 @@ body {
 /**********************/
 /* CSS for Articles component */
 .postContainer{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   column-gap: 26px;
   min-width: 100%;
