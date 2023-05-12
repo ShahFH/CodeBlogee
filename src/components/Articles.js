@@ -15,12 +15,6 @@ function Articles() {
       image: 'image-url-2.jpg',
       content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
-    {
-      id: 3,
-      title: 'Post Title 2',
-      image: 'image-url-2.jpg',
-      content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
     
     // Add more blog post objects as needed
   ];
