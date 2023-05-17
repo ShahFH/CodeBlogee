@@ -7,12 +7,16 @@ function Home() {
   return (
     <section className='Home'>
       <div className='hero container'>
-      {<img className="bgImg" src={bgImg} alt="Background-Img" />}
-        <h1 className='hero-title'>Welcome to CodeBloge</h1>
-        <p className='hero-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        
+      {/*<img className="bgImg" src={bgImg} alt="Background-Img" />*/}
+        <div>
+          <h1 className='hero-title'>Welcome to CodeBloge</h1>
+          <p className='hero-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>  
+        <div>  
+        <img className='hero-image' src={Image} alt='Hero Image' />
+        </div>
       </div>
-      <img className='hero-image' src={Image} alt='Hero Image' />
+      <div className='Space-div'></div>
     </section>
   );
 }
