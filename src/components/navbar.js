@@ -10,7 +10,7 @@ const Navbar = () => {
     };
   
     return (
-      <header className="App">
+      <header className="App ">
         <nav className={isNavOpen ? 'navbar open' : 'navbar'}>
           <div className="nav-brand">C<span className="jump">⭕</span>Bloge</div>
           <button className="nav-toggle" onClick={handleNavToggle}>
