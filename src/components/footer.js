@@ -10,7 +10,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Section */}
           <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold">Company Name</h2>
+            <h2 className="text-2xl font-bold">C<span className="jump">⭕</span>Bloge</h2>
             <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-gray-100"><FaFacebookF /></a>

@@ -6,19 +6,19 @@ function Articles() {
     {
       id: 1,
       title: 'How to turn wood into money hahah not funny',
-      image: 'image-url-1.jpg',
+      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: 2,
-      title: 'Post Title 2',
-      image: 'image-url-2.jpg',
+      title: 'React in a short way to learn',
+      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
       content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
       id: 3,
-      title: 'Post Title 2',
-      image: 'image-url-2.jpg',
+      title: 'my journey from zero to hero',
+      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
       content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     
@@ -26,18 +26,27 @@ function Articles() {
   ];
 
   return (
-    <section className='articles relative mx-auto my-0 min-h-full max-w-4xl'>
-  <div className='container mx-auto px-4 '>
-    <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-4'>
-      {blogPosts.map((post) => (
-        <div key={post.id} className='post'>
-          <img src={post.image} alt={post.title} style={{ width: '304px', height: '176px' }} />
-          <h2 style={{ width: '262px', height: '78px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{post.title}</h2>
-        </div>
-      ))}
+    <>
+    <div className="flex justify-center pb-24 font-sans">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Articles</h1>
     </div>
-  </div>
+    <section className='articles relative mx-auto my-0 min-h-full max-w-4xl'>
+    <div className='container mx-auto px-4 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-4'>
+        {blogPosts.map((post) => (
+          <div key={post.id} className='post max-w-xs'>
+            <a href="#">
+            <img src={post.image} className="mb-5 rounded-lg" alt="Article Image" />
+            </a>
+            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+              <a href="#">{post.title}</a>
+            </h2>
+          </div>))}
+      </div>
+      
+    </div>
 </section>
+</>
 
   );
 }
