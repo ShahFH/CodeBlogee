@@ -1,4 +1,4 @@
-# CodeBlogee
+# C⭕deBlogee
 
 Welcome to CodeBlogee, a personal blog where I share my thoughts, experiences, and insights on various topics related to programming, technology, and life as a developer.
 
