@@ -26,11 +26,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1d2939;
+  background-color: rgb(17 24 39 );
   color: #fff;
   padding: 40px 60px 20px 60px;
   position: relative;
   margin-bottom: -20px;
+  box-shadow: inset;
 }
 
 .nav-brand {
@@ -107,7 +108,7 @@ body {
 /**Home Page css */
 
 .Home {
-  background-color: #1d2939;
+  background-color: rgb(17 24 39 );
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -150,7 +151,6 @@ body {
   margin: 20px auto; /* Add vertical spacing and horizontally center the text */
   color: #ffffff;
 }
-
 /**********************/
 /* CSS for Articles component 
 .postContainer{
