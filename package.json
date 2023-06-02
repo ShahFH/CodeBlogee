@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "flowbite-typography": "^1.0.3",
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.8.0",

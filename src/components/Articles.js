@@ -1,54 +1,78 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { GraphQLClient, gql } from 'graphql-request';
 
-function Articles() {
-  // Sample data for blog posts
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'How to turn wood into money hahah not funny',
-      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-    {
-      id: 2,
-      title: 'React in a short way to learn',
-      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
-      content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-      id: 3,
-      title: 'my journey from zero to hero',
-      image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
-      content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    
-    // Add more blog post objects as needed
-  ];
+const endpoint = 'api key';
+
+const Postcard = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const graphQLClient = new GraphQLClient(endpoint);
+
+      const query = gql`
+        query {
+          posts {
+            id
+            title
+            datePublished
+            slug
+            content {
+              html
+            }
+            author {
+              name
+              avatar {
+                url
+              }
+            }
+            coverPhoto {
+              url
+            }
+          }
+        }
+      `;
+
+      try {
+        const response = await graphQLClient.request(query);
+        setData(response.posts);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
     <div className="flex justify-center pb-24 font-sans">
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Articles</h1>
     </div>
-    <section className='articles relative mx-auto my-0 min-h-full max-w-4xl'>
-    <div className='container mx-auto px-4 '>
-      <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-4'>
-        {blogPosts.map((post) => (
-          <div key={post.id} className='post max-w-xs'>
-            <a href="#">
-            <img src={post.image} className="mb-5 rounded-lg" alt="Article Image" />
-            </a>
-            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-              <a href="#">{post.title}</a>
-            </h2>
-          </div>))}
-      </div>
-      
+
+  <section className="articles relative mx-auto my-0 min-h-full max-w-4xl">
+  <div className="container mx-auto px-4">
+      {data ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-4">
+          {data.map((post) => (
+            <div className='max-w-xs' key={post.id}>
+              {post.coverPhoto && <img src={post.coverPhoto.url} className="mb-5 rounded-lg" alt="Cover" onError={(e) => console.log('Image error:', e)} />}
+              <h2 className='className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white"'>{post.title}</h2>
+              {/*<p>{post.datePublished}</p>*/}
+              {/*post.content && <div dangerouslySetInnerHTML={{ __html: post.content.html }} />*/}
+              {/* Render other post details as needed */}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>Loading data...</p>
+      )}
     </div>
-</section>
-</>
-
+  </section>
+  </>
   );
-}
+};
 
-export default Articles;
+export default Postcard;
+
+
