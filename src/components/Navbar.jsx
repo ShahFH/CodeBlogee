@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../style.css';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -17,10 +18,26 @@ const Navbar = () => {
             Menu
           </button>
           <ul className="nav-menu">
-            <li className="nav-item">Home</li>
-            <li className="nav-item">About</li>
-            <li className="nav-item">articles</li>
-            <li className="nav-item">Contact</li>
+            <li className="nav-item">
+            <Link to={'/'}>
+              Home
+            </Link>
+            </li>
+            <li className="nav-item">
+            <Link to={'/About'}>
+            About
+            </Link>
+            </li>
+            <li className="nav-item">
+            <Link to={'/Articles'}>
+            articles
+            </Link>
+            </li>
+            <li className="nav-item">
+            <Link to={'/Footer'}>
+              Contact
+            </Link>
+            </li>
           </ul>
         </nav>
       </header>

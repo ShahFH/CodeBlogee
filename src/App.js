@@ -1,21 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar.js';
-import Home from './components/Home.js';
-import Articles from './components/articles.js';
-import Footer from './components/footer.js';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Home from './components/Home.jsx';
+import Articles from './components/Articles.jsx';
+import Footer from './components/Footer.jsx';
+import About from './components/About.jsx';
+import PostDetail from './components/postDetails.jsx';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="./components/articles.js" element={<Articles />} />
+        <Route path="/Articles" element={<Articles />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/postDetail' element={<PostDetail/>} />
       </Routes>
-      <Articles/>
       <Footer />
-    </Router>
+    </>
   );
 }
 

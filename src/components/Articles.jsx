@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
+import { Link } from 'react-router-dom';
 
-const endpoint = 'api key';
+const endpoint = '';
 
-const Postcard = () => {
+const Articles = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -55,13 +56,11 @@ const Postcard = () => {
       {data ? (
         <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-4">
           {data.map((post) => (
-            <div className='max-w-xs' key={post.id}>
-              {post.coverPhoto && <img src={post.coverPhoto.url} className="mb-5 rounded-lg" alt="Cover" onError={(e) => console.log('Image error:', e)} />}
-              <h2 className='className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white"'>{post.title}</h2>
-              {/*<p>{post.datePublished}</p>*/}
-              {/*post.content && <div dangerouslySetInnerHTML={{ __html: post.content.html }} />*/}
-              {/* Render other post details as needed */}
-            </div>
+            <Link to={`/post/${post.slug}`} key={post.id} className="max-w-xs">
+            {post.coverPhoto && <img src={post.coverPhoto.url} className="mb-5 rounded-lg" alt="Cover" onError={(e) => console.log('Image error:', e)} />}
+            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">{post.title}</h2>
+            {/* Render other post details as needed */}
+          </Link>
           ))}
         </div>
       ) : (
@@ -73,6 +72,6 @@ const Postcard = () => {
   );
 };
 
-export default Postcard;
+export default Articles;
 
 
