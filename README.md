@@ -32,4 +32,4 @@ To ensure a smooth and efficient collaboration process, please keep the followin
 - Test your code: Ensure that your code modifications do not break existing functionality and include relevant tests if applicable.
 - Stay up to date: Before starting your contribution, check if there are any open issues or ongoing discussions related to your proposed changes.
 
-Thank you for considering contributing to CodeBlogee! Your contributions help improve the blog and make it a valuable resource for the developer community.
+Thank you 👍 for considering contributing to CodeBlogee!😊 Your contributions help improve the blog and make it a valuable resource for the developer community.👋
