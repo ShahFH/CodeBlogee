@@ -56,7 +56,7 @@ const Articles = () => {
       {data ? (
         <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-4">
           {data.map((post) => (
-            <Link to={`/post/${post.slug}`} key={post.id} className="max-w-xs">
+            <Link to={`/post/${post.id}`} key={post.id} className="max-w-xs">
             {post.coverPhoto && <img src={post.coverPhoto.url} className="mb-5 rounded-lg" alt="Cover" onError={(e) => console.log('Image error:', e)} />}
             <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">{post.title}</h2>
             {/* Render other post details as needed */}
